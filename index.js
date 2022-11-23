@@ -4,18 +4,22 @@ import ClockViewDOM from "./ClockViewDOM.js";
 import ClockViewSVG from "./ClockViewSVG";
 import ClockViewCanvas from "./ClockViewCanvas";
 
-const initSvgClock = ()=>{
+const getControllerWithModel = ()=>{
+    const model = new Clock(0);
+    const controller = new ClockControllerButtons(model);
+    console.log(controller)
+    return controller;
+}
 
-};
-const initDomClock = () => {
-
-};
-const initCanvasClock = () => {
-
-};
+//главная функция запуска
 const main =()=>{
-
+    //const viewSvg = new ClockViewSVG(getControllerWithModel());
+    const viewDom = new ClockViewDOM(getControllerWithModel());
+    console.log(viewDom)
+ viewDom.render();
+    //const viewCanvas = new ClockViewCanvas(getControllerWithModel());
 };
+main();
 
 
 // const makePointsDeal = () => {

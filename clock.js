@@ -1,6 +1,7 @@
 export default class Clock {
     constructor(carrentUTC) {
         this.carrentUTC = carrentUTC;
+        console.log('fgfdhsjs')
     }
     start() {
         if (!this.timerId) {
