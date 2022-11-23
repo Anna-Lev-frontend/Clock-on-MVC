@@ -1,7 +1,7 @@
-* {
+ * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box ;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
     background-color: lightgreen;
 }
 
-.main-dial{
+.clock-face{
 border-radius: 50%;
 width: 500px;
 height: 500px;
@@ -23,7 +23,7 @@ justify-content: center;
 align-items: center;
 }
 
-.point{
+/* .point{
     position: absolute;
     top: calc(50% - 35px);
     right: calc(50% - 35px);
@@ -44,12 +44,12 @@ align-items: center;
     background-color: green;
     border-radius: 50%;
     z-index: 999;
-}
-.make-arrows {
+} */
+/* .make-arrows {
     position: absolute;
-}
+} */
 
-.hr {
+.arrow-hour {
     right: calc(50% - 7px);
     height: 120px;
     width: 14px;
@@ -59,7 +59,7 @@ align-items: center;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
 }
-.sc {
+.arrow-sec {
     right: calc(50% - 3px);
     height: 160px;
     width: 6px;
@@ -68,8 +68,8 @@ align-items: center;
     bottom: 0;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
-}
-.mn {
+} 
+.arrow-min {
     right: calc(50% - 5px);
     height: 140px;
     width: 10px;
@@ -78,4 +78,4 @@ align-items: center;
     bottom: 0;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
-}
+} 

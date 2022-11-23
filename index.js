@@ -1,8 +1,8 @@
-import Clock from "./clock";
-import ClockControllerButtons from "./ClockControllerButtons";
+import Clock from "./clock.js";
+import ClockControllerButtons from "./ClockControllerButtons.js";
 import ClockViewDOM from "./ClockViewDOM.js";
-import ClockViewSVG from "./ClockViewSVG";
-import ClockViewCanvas from "./ClockViewCanvas";
+//import ClockViewSVG from "./ClockViewSVG.js";
+// import ClockViewCanvas from "./ClockViewCanvas.js";
 
 const getControllerWithModel = ()=>{
     const model = new Clock(0);
@@ -11,11 +11,12 @@ const getControllerWithModel = ()=>{
     return controller;
 }
 
-//главная функция запуска
+// главная функция запуска
 const main =()=>{
     //const viewSvg = new ClockViewSVG(getControllerWithModel());
+    console.log('hello')
     const viewDom = new ClockViewDOM(getControllerWithModel());
-    console.log(viewDom)
+   
  viewDom.render();
     //const viewCanvas = new ClockViewCanvas(getControllerWithModel());
 };

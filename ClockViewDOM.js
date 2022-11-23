@@ -4,14 +4,20 @@ export default class ClockViewDOM {
         this.template = document.createElement('div');
         this.template.classList.add('template');
         this.generateTemplate();
-    }
+    };
     createButtons() {
         this.btnStart = document.createElement('button');
         this.btnStart.classList.add('btn');
         this.btnStart.innerText = 'Start';
+        this.btnStart.addEventListener('click', ()=>{
+            this.controller.startClickHandler();
+        });
         this.btnStop = document.createElement('button');
         this.btnStop.classList.add('btn');
         this.btnStop.innerText = 'Stop';
+        this.btnStop.addEventListener('click', ()=>{
+            this.controller.stopClickHandler();
+        });
         this.template.append(this.btnStart, this.btnStop);
     };
     generateTemplate() {

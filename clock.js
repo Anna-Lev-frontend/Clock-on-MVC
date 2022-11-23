@@ -1,8 +1,7 @@
 export default class Clock {
     constructor(carrentUTC) {
         this.carrentUTC = carrentUTC;
-        console.log('fgfdhsjs')
-    }
+           };
     start() {
         if (!this.timerId) {
             this.timerId = setInterval(() => {
@@ -10,12 +9,14 @@ export default class Clock {
                 this.hour = date.getUTCHours() + this.carrentUTC;
                 this.min = date.getUTCMinutes();
                 this.sec = date.getUTCSeconds();
+                console.log(this.hour,this.min,this.sec);
             }, 1000);
         }
-    }
+    };
     stop() {
         if (this.timerId) {
-            clearInterval(this.timerId)
+            clearInterval(this.timerId);
+            this.timerId = null;
         }
-    }
+    };
 }
