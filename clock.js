@@ -1,4 +1,4 @@
-class Clock {
+export default class Clock {
     constructor(carrentUTC) {
         this.carrentUTC = carrentUTC;
     }

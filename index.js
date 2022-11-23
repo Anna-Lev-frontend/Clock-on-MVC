@@ -1,31 +1,21 @@
-const clockModel = 
+import Clock from "./clock";
+import ClockControllerButtons from "./ClockControllerButtons";
+import ClockViewDOM from "./ClockViewDOM.js";
+import ClockViewSVG from "./ClockViewSVG";
+import ClockViewCanvas from "./ClockViewCanvas";
 
+const initSvgClock = ()=>{
 
+};
+const initDomClock = () => {
 
+};
+const initCanvasClock = () => {
 
+};
+const main =()=>{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 
 // const makePointsDeal = () => {
