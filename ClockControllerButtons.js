@@ -1,9 +1,10 @@
 export default class ClockControllerButtons {
     constructor(model) {
         this.model = model;
+        
     };
-    startClickHandler() {
-        this.model.start();
+    startClickHandler(callback) {
+        this.model.start(callback);
     };
     stopClickHandler() {
         this.model.stop();
@@ -17,6 +18,9 @@ export default class ClockControllerButtons {
     get sec() {
         return this.model.sec;
     };
+    get curentTown(){
+        return this.model.town[this.model.carrentUTC];
+    }
 }
 
 

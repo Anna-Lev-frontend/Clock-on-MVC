@@ -10,12 +10,13 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: lightgreen;
+    height: 100%;
 }
 
 .clock-face{
 border-radius: 50%;
-width: 500px;
-height: 500px;
+width: 200px;
+height: 200px;
 background-color: yellow;
 position: relative;
 display: flex;
@@ -23,20 +24,20 @@ justify-content: center;
 align-items: center;
 }
 
-/* .point{
+.point{
     position: absolute;
-    top: calc(50% - 35px);
-    right: calc(50% - 35px);
-    width: 70px;
-    height: 70px;
+    top: calc(50% - 11px);
+    right: calc(50% - 11px);
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background-color: green; 
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
 }
 
-.main-dial:before{
+/* .main-dial:before{
     content: '';
     position: absolute;
     width: 15px;
@@ -45,37 +46,57 @@ align-items: center;
     border-radius: 50%;
     z-index: 999;
 } */
-/* .make-arrows {
+
+.arrow-container {
     position: absolute;
-} */
+    width: 100%;
+    height: 100%;
+} 
 
 .arrow-hour {
-    right: calc(50% - 7px);
-    height: 120px;
-    width: 14px;
+    right: calc(50% - 4px);
+    height: 30%;
+    width: 8px;
     background: black;
     position: absolute;
     bottom: 0;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
+    top:50%; 
+    margin-top:-30%;
+    
 }
 .arrow-sec {
-    right: calc(50% - 3px);
-    height: 160px;
-    width: 6px;
+    right: calc(50% - 2px);
+    height: 45%;
+    width: 4px;
     background: red;
     position: absolute;
     bottom: 0;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
+    top:50%; 
+    margin-top:-45%;
 } 
 .arrow-min {
-    right: calc(50% - 5px);
-    height: 140px;
-    width: 10px;
+    right: calc(50% - 3px);
+    height: 35%;
+    width: 6px;
     background: black;
     position: absolute;
     bottom: 0;
     transform-origin: bottom;
     border-radius: 6px 6px 0 0;
+    top:50%; 
+    margin-top:-35%;
 } 
+#root {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+width: 100%;
+height: 100%;
+}
+.template {
+    flex: 1;
+}
