@@ -25,9 +25,13 @@ export default class ClockViewCanvas {
             const x = event.offsetX;
             const y = event.offsetY;
 
-            this.controller.startClickHandler(this.generateTemplate.bind(this))
-        })
+            if (x >= 0 && x <= 35 && y >= 0 && y <= 10) {
+                this.controller.startClickHandler(this.generateTemplate.bind(this))
+            } else if (x >= 37 && x <= 70 && y >= 0 && y <= 10) {
+                this.controller.stopClickHandler(this.generateTemplate.bind(this))
+            }
 
+        })
 
     }
     generateTemplate() {
