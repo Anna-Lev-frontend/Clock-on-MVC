@@ -5,9 +5,9 @@ export default class ClockViewDOM {
         this.template.classList.add('template');
         this.generateTemplate();
         
-    };
+    }
     createButtons() {
-        this.btnStart = document.createElement('button');
+        this.btnStart = document.createElement('button');//
         this.btnStart.classList.add('btn');
         this.btnStart.innerText = 'Start';
         this.btnStart.addEventListener('click', ()=>{
@@ -20,7 +20,7 @@ export default class ClockViewDOM {
             this.controller.stopClickHandler();
         });
         this.template.append(this.btnStart, this.btnStop);
-    };
+    }
     generateTemplate() {
         this.createButtons()//создаем кнопки
         const town = document.createElement('span');
@@ -28,7 +28,7 @@ export default class ClockViewDOM {
         this.template.append(town);
         this.createClockFace()// создаем корпус часов с циферблатом
 
-    };
+    }
     createClockFace() {
         this.clockFace = document.createElement('div');
         this.clockFace.classList.add('clock-face');
@@ -49,7 +49,7 @@ export default class ClockViewDOM {
         this.clockFace.append(...clockFaceTimes, this.arrowContainer);
         this.createArrows()//создаем стрелки
         this.template.append(this.clockFace);
-    };
+    }
     createArrows() {
         //div.style = `transform: translate(0px, -200px) rotate(${(index + 1) * 30}deg); transform-origin: center 235px;`
         this.arrowHour = document.createElement('div');

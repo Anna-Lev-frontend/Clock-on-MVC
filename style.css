@@ -99,4 +99,6 @@ height: 100%;
 }
 .template {
     flex: 1;
+    min-width: 200px;
+    min-height: 220px;
 }
