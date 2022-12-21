@@ -8,15 +8,14 @@ export default class ClockViewCanvas {
         this.canvas.height = 220;
         this.ctx = this.canvas.getContext('2d');
         this.template.append(this.canvas);
-
         this.generateTemplate();
     }
     createButtons() {
-        const buttons = [{ text: 'start', x: 0, y: 0 }, { text: 'stop', x: 35, y: 0 }];
+        const buttons = [{ text: 'Start', x: 0, y: 0 }, { text: 'Stop', x: 35, y: 0 }];
         buttons.forEach((item) => {
             this.ctx.strokeStyle = 'black';
-            this.ctx.fillStyle = 'lightgray';
-            this.ctx.fillRect(item.x, item.y, 32, 20);
+            this.ctx.fillStyle = 'white';
+            this.ctx.fillRect(item.x, item.y, 33, 20);
             this.ctx.font = '14px sans-serif';
             this.ctx.fillStyle = 'black';
             this.ctx.fillText(item.text, item.x, 10);
@@ -30,15 +29,11 @@ export default class ClockViewCanvas {
             } else if (x >= 37 && x <= 70 && y >= 0 && y <= 10) {
                 this.controller.stopClickHandler(this.generateTemplate.bind(this))
             }
-
         })
 
     }
     generateTemplate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-        //this.ctx.fillStyle = 'white';
-        //this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
         this.createButtons();
         this.ctx.fillText(this.controller.curentTown, 80, 10);
         this.createClockFace();
@@ -63,7 +58,7 @@ export default class ClockViewCanvas {
             this.ctx.stroke();
             this.ctx.font = '14px sans-serif';
             this.ctx.fillStyle = 'black';
-            this.ctx.fillText(index + 1, (item.x) - 5, item.y +3);
+            this.ctx.fillText(index + 1, (item.x) - 5, item.y + 3);
 
         })
 
@@ -71,20 +66,19 @@ export default class ClockViewCanvas {
     createArrows() {
 
         const arrows = [
-            { color: 'black', height: -50, width: 7, deg: this.controller.hour * 30 },
+            { color: 'black', height: -50, width: 8, deg: this.controller.hour * 30 },
             { color: 'black', height: -60, width: 6, deg: this.controller.min * 6 },
-            { color: 'red', height: -70, width: 4, deg: this.controller.sec * 6 }]
+            { color: 'red', height: -70, width: 3, deg: this.controller.sec * 6 }]
         this.ctx.translate(100, 120);
         arrows.forEach((item) => {
             this.ctx.strokeStyle = 'black';
-            this.ctx.fillStyle = item.color;
-            //this.ctx.rotate(0)
+            this.ctx.fillStyle = item.color;   
             this.ctx.rotate(item.deg * Math.PI / 180);
-            this.ctx.fillRect(0, 0, item.width, item.height);
+            this.ctx.fillRect(- item.width / 2, 0, item.width, item.height);
             this.ctx.rotate(-(item.deg * Math.PI / 180))
         })
         this.ctx.translate(-100, -120);
-        //this.ctx.rotate(0);
+     
     }
     render() {
         document.querySelector('#root').append(this.template);
