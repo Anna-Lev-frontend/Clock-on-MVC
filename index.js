@@ -1,7 +1,7 @@
 import Clock from "./clock.js";
 import ClockControllerButtons from "./ClockControllerButtons.js";
 import ClockViewDOM from "./ClockViewDOM.js";
-//import ClockViewSVG from "./ClockViewSVG.js";
+import ClockViewSVG from "./ClockViewSVG.js";
 import ClockViewCanvas from "./ClockViewCanvas.js";
 
 const getControllerWithModel = (num=0)=>{
@@ -19,8 +19,8 @@ const main =()=>{
     const viewDom2 = new ClockViewDOM(getControllerWithModel());
     const viewDom3 = new ClockViewCanvas(getControllerWithModel(1));
     const viewDom4 = new ClockViewCanvas(getControllerWithModel(3));
-    const viewDom5 = new ClockViewDOM(getControllerWithModel(6));
-    const viewDom6 = new ClockViewDOM(getControllerWithModel(9));
+    const viewDom5 = new ClockViewSVG(getControllerWithModel(6));
+    const viewDom6 = new ClockViewSVG(getControllerWithModel(9));
     viewDom1.render();
     viewDom2.render();
     viewDom3.render();
